@@ -1,0 +1,13 @@
+sass:
+  sass_dir: _sass
+  style: :nested
+
+excerpt_separator: <!--more-->
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
