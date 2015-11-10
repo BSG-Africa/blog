@@ -4,6 +4,8 @@ sass:
 
 excerpt_separator: <!--more-->
 
+baseurl: /blog
+
 defaults:
   -
     scope:
