@@ -1,11 +1,12 @@
 ---
 title: Immutable Objects in Java
 ---
-# Immutable Objects in Java
 
 ## Problems with mutable objects
 
-A mutable object’s state can change whereas an immutable object must always remain in the same state in which it was created. Why would you want to make an object immutable? Consider the following method:
+A mutable object’s state can change whereas an immutable object must always remain in the same state in which it was created. Why would you want to make an object immutable?
+<!--more-->
+Consider the following method:
 
 ```java
 public Date dayAfter(Date date) { ... }
@@ -29,8 +30,6 @@ public Date dayAfter(Date date) {
     return date;
 }
 ```
-
-<!--more-->
 
 As you can see, the method is updating the existing object and returning it. This means that both `today` and `tomorrow` are now pointing at the same `Date` object which has tomorrow’s date as its value! The fact that `today` is declared `final` does nothing to prevent the object itself from being changed.
 
