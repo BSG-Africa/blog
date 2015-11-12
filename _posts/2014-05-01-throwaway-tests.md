@@ -6,6 +6,7 @@ A while back I had to write a PowerShell script. The script was not particularly
 to watch a directory and perform an action when specific set of files existed. As I started adding
 functionality to the script, it became increasingly harder to test. Each time I wanted to run my script,
 I had to delete and recreate the whole folder structure, and then monitor the output.
+<!--more-->
 
 My aversion to doing anything manually led me to search for a testing framework for PowerShell. I
 very quickly dismissed all the search results as way too much effort for a few lines of script. I instead

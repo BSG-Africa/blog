@@ -4,6 +4,8 @@ sass:
 
 excerpt_separator: <!--more-->
 
+# /blog happening to be the project name on github (i.e. bsg-africa.github.io/blog)
+# override with --baseurl "" when testing locally
 baseurl: /blog
 
 markdown: redcarpet
