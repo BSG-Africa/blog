@@ -1,13 +1,14 @@
 ---
 layout: default
+title: BSG Developer Blog
 ---
 
 <ul>
-  {% for post in site.posts %}
-    <li>
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-      {{ post.excerpt }}
-      <hr>
-    </li>
-  {% endfor %}
+    {% for post in site.posts %}
+        <li>
+            <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+            {{ post.excerpt }}
+            <hr>
+        </li>
+    {% endfor %}
 </ul>
