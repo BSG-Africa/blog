@@ -1,20 +1,17 @@
----
-title: Challenges with built-in item readers in Spring Batch
----
+Challenges with built-in item readers in Spring Batch
+===
 
-Lately I have done a lot of work with [spring-batch](http://projects.spring.io/spring-batch/). The learning curve is quite steep because there is a lot concepts and principles to master before you can start using it effectively. By now I've read every page of documentation and a number of blogs. Once you get going you think you know what you are doing, but there are still a lot of pitfalls that can trip you up. Here are three.
-
-<!--more-->
+Lately I have done a lot of work with [spring-batch](http://projects.spring.io/spring-batch/). The learning curve is quite steep because there are a lot concepts and principles to master before you can start using it effectively. By now I've read every page of documentation and a number of blogs. Once you get going you think you know what you are doing, but there are still a lot of pitfalls that can trip you up. Here are three.
 
 Any paging item reader
 -------------
 
-When using a [paging item reader](http://docs.spring.io/spring-batch/trunk/reference/html/readersAndWriters.html#pagingItemReaders) and performing processing on the returned items, beware that you could be changing the results of your query between chunks, which means that page 2 might contain different records before processing page 1 and after processing page 1, resulting either in certain records not being returned by your item reader, or others being returned more than once. You can think of this almost like the fail-fast behaviour of iterators in Java which throw an exception when the underlining collection is changed.
+When using a [paging item reader](http://docs.spring.io/spring-batch/trunk/reference/html/readersAndWriters.html#pagingItemReaders) and performing processing on the returned items, beware that you could be changing the results of your query between chunks, which means that page 2 might contain different records before processing page 1 and after processing page 1. This can result either in certain records not being returned by your item reader, or others being returned more than once. You can think of this almost like the fail-fast behaviour of iterators in Java, which throw an exception when the underlining collection is changed.
 
 Any cursor item reader
 -------------
 
-[Cursor-based item readers](http://docs.spring.io/spring-batch/trunk/reference/html/readersAndWriters.html#cursorBasedItemReaders) solve the problem of changing result sets, but have other [problems](http://stackoverflow.com/q/33043411/297331). Spring Batch by default performs a commit after every chunk, which closes the cursor. The framework solves this problem by creating a new connection that does not participate in a transaction. However, if your job is deployed in an application server, the step will fail at the start of the next chunk, because the *"Result set already closed"*. This is because connections supplied by the container always participate in a transaction. To solve this you have to set up another, non-transactional data source.
+[Cursor-based item readers](http://docs.spring.io/spring-batch/trunk/reference/html/readersAndWriters.html#cursorBasedItemReaders) solve the problem of changing result sets, but have other [problems](http://stackoverflow.com/q/33043411/297331). Spring Batch by default performs a commit after every chunk, which closes the cursor. The framework solves this problem by creating a new connection that does not participate in a transaction. However, if your job is deployed in an application server, the step will fail at the start of the next chunk, because the *"Result set already closed"*. This is because connections supplied by the container always participate in a transaction. To solve this, you have to set up another, non-transactional data source.
 
 Hibernate paging item reader
 -------------
