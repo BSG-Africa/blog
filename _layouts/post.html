@@ -3,8 +3,9 @@
 {% include head.html %}
 <body>
 <div class="wrapper">
+    <header><p><a href="{{ site.baseurl }}/">BSG Developer Blog</a></p></header>
     <section>
-        <p><a href="{{ site.baseurl }}/">BSG Developer Blog</a></p>
+        <h1>{{ page.title }}</h1>
         {{ content }}
     </section>
     {% include footer.html %}

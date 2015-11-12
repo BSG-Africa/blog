@@ -16,6 +16,12 @@ defaults:
   -
     scope:
       path: ""
-      type: "posts"
+      type: ""
     values:
       layout: "default"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

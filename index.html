@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Blog by BSG-Africa
 ---
 
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
       {{ post.excerpt }}
+      <hr>
     </li>
   {% endfor %}
 </ul>
