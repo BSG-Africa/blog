@@ -2,12 +2,15 @@
 <html>
 {% include head.html %}
 <body>
-<div class="wrapper">
-    <section>
-        <h1>{{ page.title }}</h1>
+{% include heading.html %}
+<div class="row">
+    <div class="column medium-3">
+        <span>&nbsp;</span>
+    </div>
+    <div class="columns medium-9">
         {{ content }}
-    </section>
-    {% include footer.html %}
+    </div>
 </div>
+{% include responsivefooter.html %}
 </body>
 </html>
