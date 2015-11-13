@@ -45,7 +45,7 @@ code, pre {
     color: $white;
   }
 }
-h1, h1 a {
+h1, h2 a {
   color: $p-dark-blue;
 }
 
@@ -55,5 +55,11 @@ h1, h1 a {
   position: fixed;
   padding-left: 10px;
   bottom: 40px;
+  ul {
+    list-style-type: none;
+  }
 }
 
+footer {
+  text-align: center;
+}
