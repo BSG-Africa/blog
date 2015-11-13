@@ -28,6 +28,21 @@ a {
 
 code, pre {
   font-family: Consolas, Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  background: #FDFEFB;
+  border: none;
+}
+
+pre {
+  padding: 4px 12px;
+  background: #FDFEFB;
+  border-radius:4px;
+  overflow: auto;
+  overflow-y: hidden;
+  margin-bottom: 32px;
+}
+
+.highlight {
+  background-color: #ffffcc;
 }
 
 /* Header */
@@ -45,6 +60,7 @@ code, pre {
     color: $white;
   }
 }
+
 h1, h2 a {
   color: $p-dark-blue;
 }
