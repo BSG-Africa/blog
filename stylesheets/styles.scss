@@ -1,20 +1,25 @@
 ---
 ---
 
+$white: #fefefe;
+$p-black: #171717;
+$p-dark-blue: #007cbb;
+$p-light-blue: #20c4f4;
+$s-mid-blue: #7baed4;
+$main-text: #4d4d4d;
+
 /* Base text styles */
 
 body {
-  padding: 10px 50px 0 0;
   font: 12px/18px Arial, Helvetica, sans-serif;
-  color: #4d4d4d;
-  background-color: #FBFAF7;
+  color: $main-text;
   margin: 0;
   line-height: 1.8em;
   -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: #06579d;
+  color: $p-light-blue;
   text-decoration: none;
   outline: none;
 }
@@ -27,27 +32,27 @@ code, pre {
 
 /* Header */
 
-header {
-  background-color: #171717;
-  color: #FDFDFB;
-  border: 1px solid #000;
-  -webkit-border-top-right-radius: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-  -moz-border-radius-topright: 4px;
-  -moz-border-radius-bottomright: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  -webkit-font-smoothing: antialiased;
-  position: fixed;
+.heading {
+  background: $p-black url({{ site.baseurl }}/images/trimming.png) repeat-x;
+  color: $white;
+  width: 100%;
+  img {
+    padding: 20px 20px 10px 20px;
+  }
+  h1 {
+    display: inline;
+    color: $white;
+  }
+}
+h1, h1 a {
+  color: $p-dark-blue;
 }
 
 /* Footer */
-
-footer {
-  width: 170px;
+.hidden-for-small footer {
+  width: 205px;
   float: left;
   position: fixed;
   bottom: 10px;
-  padding-left: 50px;
 }
 

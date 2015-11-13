@@ -2,10 +2,19 @@
 <html>
 {% include head.html %}
 <body>
+<div class="heading">
+    <div class="logo">
+        <a href="{{ site.baseurl }}/">
+            <img src="{{ site.baseurl }}/images/bsg-logo-hr.png">
+        </a>
+        <h1>
+            BSG Development Blog
+        </h1>
+    </div>
+</div>
 <div class="row">
     <div class="column medium-3">
         <span>&nbsp;</span>
-        <header><p><a href="{{ site.baseurl }}/">BSG Developer Blog</a></p></header>
     </div>
     <div class="columns medium-9">
         <section>
@@ -15,7 +24,10 @@
     </div>
 </div>
 <div class="row">
-    <div class="column medium-3">&nbsp;
+    <div class="column medium-3 hidden-for-small">&nbsp;
+        {% include footer.html %}
+    </div>
+    <div class="column small-12 visible-for-small">&nbsp;
         {% include footer.html %}
     </div>
 </div>
