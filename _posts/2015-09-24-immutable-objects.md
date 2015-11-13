@@ -1,5 +1,6 @@
 ---
 title: Immutable Objects in Java
+author: Rowan Titlestad
 ---
 
 ## Problems with mutable objects

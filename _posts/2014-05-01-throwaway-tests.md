@@ -1,5 +1,6 @@
 ---
 title: Throwaway Tests
+author: Richard Young
 ---
 
 A while back I had to write a PowerShell script. The script was not particularly complicated, it needed

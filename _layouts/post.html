@@ -10,6 +10,7 @@
     <div class="columns medium-9">
         <section>
             <h1>{{ page.title }}</h1>
+            <h6>{{ page.author }} &dash; {{ page.date | date_to_string }}</h6>
             {{ content }}
         </section>
     </div>

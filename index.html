@@ -6,7 +6,7 @@ title: BSG Developer Blog
 {% for post in site.posts %}
     <article>
         <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-        <h6>by <a href="#">{{ post.author }}</a>{{ post.date | date_to_string }}</h6>
+        <h6>by <a href="#">{{ post.author }}</a> &dash; {{ post.date | date_to_string }}</h6>
 
         <div class="row">
             <div class="large-12 columns">
