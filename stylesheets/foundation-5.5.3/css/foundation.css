@@ -3571,16 +3571,6 @@ small {
   font-size: 60%;
   line-height: inherit; }
 
-code {
-  background-color: #bcedfc;
-  border-color: #92e2fa;
-  border-style: solid;
-  border-width: 1px;
-  color: #333333;
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
-  font-weight: normal;
-  padding: 0.125rem 0.3125rem 0.0625rem; }
-
 /* Lists */
 ul,
 ol,
