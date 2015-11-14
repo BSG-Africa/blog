@@ -3,7 +3,7 @@ title: Immutable Objects in Java
 author: Rowan Titlestad
 ---
 
-## Problems with mutable objects
+#### Problems with mutable objects
 
 A mutable object’s state can change whereas an immutable object must always remain in the same state in which it was created. Why would you want to make an object immutable?
 <!--more-->
@@ -59,7 +59,7 @@ Other problems with mutable objects include:
 * They cannot be safely shared between threads (lack of thread-safety)
 * If a method that updates an object throws an exception before it is finished then the object could be left in a partially updated state (lack of failure atomicity)
 
-## Implementing an immutable object
+#### Implementing an immutable object
 
 So how does one write a Java class for an immutable object? The simplest way is to declare all fields on the object `final` and to ensure that all of these fields themselves point to immutable objects. If any field points to a mutable object then it has to be declared `private` and any accessor methods have to return a "defensive copy" of the object. Here's an example:
 
@@ -86,7 +86,7 @@ public class Article {
 
 Note that we’re protecting `publishedOn` by creating a new `Date` object with the same value. If the caller of `publishedOn()` later decides to alter the `Date` object we returned then the value stored in the `publishedOn` field will remain unchanged.
 
-## Working with immutable objects
+#### Working with immutable objects
 
 Say we have an instance of `Article` and the user needs to correct its `title`. We can’t update the existing object so we have to create a new `Article` with a different `title` but the same `publishedOn` date.
 
@@ -174,7 +174,7 @@ public Article withTitle(String title) {
 
 Note that the builder itself is mutable so it should only be used to create a new `Article` instance and then be discarded.
 
-## But I hate writing all that boilerplate!
+#### But I hate writing all that boilerplate!
 
 An alternative to writing the code by hand is to use something like Immutables 2.0 (http://immutables.org) to do it for you. Here’s all we need to define our `Article` (note that an abstract class will work too):
 
@@ -223,7 +223,7 @@ Article article = ImmutableArticle.builder()
 
 If you import your Maven project into IntelliJ then it will also generate the immutable class every time you either “Make” the project or “Compile” the `Article` interface. If, however, you need to manually set up the annotation processor in your IDE then follow these instructions: http://immutables.github.io/apt.html
 
-## References:
+#### References:
 * https://docs.oracle.com/javase/tutorial/essential/concurrency/immutable.html
 * http://www.yegor256.com/2014/06/09/objects-should-be-immutable.html
 * http://www.javapractices.com/topic/TopicAction.do?Id=29
