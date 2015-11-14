@@ -9,8 +9,8 @@ title: BSG Developer Blog
         <h6>by <a href="#">{{ post.author }}</a> &dash; {{ post.date | date_to_string }}</h6>
 
         <div class="row">
-            <div class="large-12 columns">
-                {{ post.excerpt | strip_html }}
+            <div class="large-12 columns excerpt">
+                {{ post.excerpt }}
             </div>
         </div>
     </article>
