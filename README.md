@@ -2,12 +2,13 @@
 
 Posts go in the `_posts` folder and need to be named `YYYY-MM-DD-<whatever>.(html|md)`
 
-The files need to have a FrontMatter section setting the title of the post (and eventually author info and such).
+The files need to have a FrontMatter section setting the title and author of the post (and maybe other stuff as well, later on).
 E.g.
 
 ```
 ---
 title: The title of the post
+author: Your Name
 ---
 ```
 
