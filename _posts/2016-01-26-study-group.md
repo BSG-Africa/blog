@@ -51,7 +51,7 @@ In the case with Java 8 Lambdas various parallels were drawn with using C# .net 
 All the developers picked up new key board shortcuts from  each other
 
 ####Team
-It was seen that the team worked better together with both junior and senior developers working well with each another. 
+It was seen that the team worked better together with both junior and senior developers working well with each other. 
 
 
 > Written with [StackEdit](https://stackedit.io/).
