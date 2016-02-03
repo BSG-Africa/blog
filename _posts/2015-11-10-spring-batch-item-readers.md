@@ -4,7 +4,7 @@ author: Niel De Wet
 ---
 
 Lately I have done a lot of work with [spring-batch](http://projects.spring.io/spring-batch/). The learning curve is quite steep because there are a lot concepts and principles to master before you can start using it effectively. By now I've read every page of documentation and a number of blogs. Once you get going you think you know what you are doing, but there are still a lot of pitfalls that can trip you up. Here are three.
-<!--more-->
+<more>
 
 #### Any paging item reader
 

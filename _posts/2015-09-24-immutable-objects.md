@@ -6,7 +6,7 @@ author: Rowan Titlestad
 #### Problems with mutable objects
 
 A mutable object’s state can change whereas an immutable object must always remain in the same state in which it was created. Why would you want to make an object immutable?
-<!--more-->
+<more>
 Consider the following method:
 
 ```java
