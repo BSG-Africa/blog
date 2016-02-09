@@ -5,7 +5,7 @@ author: Rowan, Richard
 ---
 
 Here are a list of common docker commands we have been using on our project that involves the use of Docker 
-<more> 
+<!--more--> 
 
 | Action                 |      Docker Command| 
 |------------------------|:------------------|
@@ -19,4 +19,3 @@ Here are a list of common docker commands we have been using on our project that
 | View a list of all images |    `docker images`   |  
 | View a list of all volumes | `docker volume ls` |   
 
-> Written with [StackEdit](https://stackedit.io/).
