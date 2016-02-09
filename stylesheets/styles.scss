@@ -7,6 +7,8 @@ $p-dark-blue: #007cbb;
 $p-light-blue: #20c4f4;
 $s-mid-blue: #7baed4;
 $main-text: #4d4d4d;
+$codebg: #FDFEFB;
+
 
 /* Base text styles */
 
@@ -24,17 +26,17 @@ a {
   outline: none;
 }
 
-/* Code blocks */
+/* Code blocks; style override for pygments.css */
 
 code, pre {
   font-family: Consolas, Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  background: #FDFEFB;
+  background-color: $codebg;
   border: none;
 }
 
 pre {
   padding: 4px 12px;
-  background: #FDFEFB;
+  background-color: $codebg;
   border-radius:4px;
   border:1px solid #D7D8C8;
   overflow: auto;
@@ -43,8 +45,10 @@ pre {
 }
 
 .highlight {
-  background-color: #ffffcc;
+  background-color: $codebg;
 }
+
+
 
 .excerpt {
   margin-left: 8px;
