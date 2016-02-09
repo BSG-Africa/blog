@@ -2,7 +2,7 @@ sass:
   sass_dir: _sass
   style: :nested
 
-excerpt_separator: <more>
+excerpt_separator: <!--more-->
 
 # override with --baseurl "" when testing locally
 baseurl: 

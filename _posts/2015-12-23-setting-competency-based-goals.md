@@ -3,7 +3,7 @@ title: Setting competency-based goals
 author: Niel de Wet
 ---
 
-For my current performance review cycle, I decided to experiment with goals worded in terms of competencies, rather than tasks. The purpose of which is to focus on developing competencies, instead of just measuring tasks completed.<more>
+For my current performance review cycle, I decided to experiment with goals worded in terms of competencies, rather than tasks. The purpose of which is to focus on developing competencies, instead of just measuring tasks completed.<!--more-->
 
 #### Performance management at BSG
 At BSG, we take professional development seriously and set goals around contribution areas related to individual roles every six months. The key is regular, incremental feedback from peers and regular progress conversations with Career Facilitators. This encourages continuous improvement, and once you have demonstrated the competencies needed to move to the next job grade, a promotion is on the cards.

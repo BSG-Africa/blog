@@ -2,7 +2,7 @@
 title: A package manager for Windows
 author: Richard Young
 ---
-One of my biggest gripes with developing software on Windows, is how hard it is to install software. In a world where scripting *everything* means saving hours of time, Windows simply cannot stack up to its Unix-based competitors. <more>
+One of my biggest gripes with developing software on Windows, is how hard it is to install software. In a world where scripting *everything* means saving hours of time, Windows simply cannot stack up to its Unix-based competitors. <!--more-->
 
 The introduction of PowerShell brought some powerful scripting tools to developers, but it's utterly useless when most Windows software must first be installed by downloading binaries (from possibly dubious sources), clicking through a wizard, waiting for the install to complete, and finally clicking finish. Updating your software is just as difficult. Most people do not truly understand how much of an inconvenience it is until they need to install their entire tech stack on 20 different servers.
 

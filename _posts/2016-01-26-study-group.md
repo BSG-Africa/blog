@@ -5,7 +5,7 @@ author: Jaisheel Mistry
 
 We recently  started a little study group at a client. The group consisted of 7 developers of different levels from junior to senior developers. The study group undertook to study the book [Java 8 lambdas](http://shop.oreilly.com/product/0636920030713.do) by Richard Warburton. The study group met weekly for an hour. 
 
-In this blog I will share reasons for the formation of the study group, how the study group was conducted and interesting findings from the study group. <more>
+In this blog I will share reasons for the formation of the study group, how the study group was conducted and interesting findings from the study group. <!--more-->
 
 ###Reasons for the study group
 Firstly let us look at the WHY behind the formation of the study group. 

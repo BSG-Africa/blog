@@ -12,7 +12,7 @@ author: Your Name
 ---
 ~~~
 
-Adding `<more>` into the text will treat the preceding text as the excerpt to be used on the overview page.
+Adding `<!--more-->` into the text will treat the preceding text as the excerpt to be used on the overview page.
 
 Please use h4 (`####` in markdown) by default for section headers.
 
