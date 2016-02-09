@@ -25,3 +25,5 @@ The following assumes you are using Windows
  3.  Install Jekyll `gem install jekyll`. If you need to go through a proxy you will need to add the -p switch after the install command. make sure your proxy url starts with http://. If you additionally need to ignore ssl errors, create the file %USERPROFILE%\\.gemrc and add the following line: `:ssl_verify_mode: 0`
  4.  Install redcarpet `gem install redcarpet`using the proxy switch again if you need to.
  5.  Now you can preview the site by navigating to the directory of the blog and running `jekyll serve`
+
+ Github forces us to switch to kramdown/rouge for markdown parsing and syntax-highlighting. Not sure what that means for windows users yet.
