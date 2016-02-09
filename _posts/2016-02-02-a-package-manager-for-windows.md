@@ -7,9 +7,7 @@ One of my biggest gripes with developing software on Windows, is how hard it is 
 The introduction of PowerShell brought some powerful scripting tools to developers, but it's utterly useless when most Windows software must first be installed by downloading binaries (from possibly dubious sources), clicking through a wizard, waiting for the install to complete, and finally clicking finish. Updating your software is just as difficult. Most people do not truly understand how much of an inconvenience it is until they need to install their entire tech stack on 20 different servers.
 
 <center>
-
-![Wizard](/images/wizard.jpg)
-
+  <img title="Wizard" src="{{ site.baseurl }}/images/wizard.jpg"/>
 </center>
 
 But now there is [Chocolatey](https://chocolatey.org/). Chocolatey NuGet is a Machine Package Manager, somewhat like apt-get, but built with Windows in mind. You can install thousands of packages with one line, silently, and from verified sources.
