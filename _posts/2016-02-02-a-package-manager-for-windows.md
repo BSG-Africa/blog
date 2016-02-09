@@ -14,8 +14,8 @@ The introduction of PowerShell brought some powerful scripting tools to develope
 
 But now there is [Chocolatey](https://chocolatey.org/). Chocolatey NuGet is a Machine Package Manager, somewhat like apt-get, but built with Windows in mind. You can install thousands of packages with one line, silently, and from verified sources.
 
-```bash
+~~~bash
     C:\> choco install jre8
-```
+~~~
 
 Even installing Chocolatey itself is as easy as executing one line of PowerShell. The future of Windows package management looks bright now that Microsoft has caught onto the idea. [OneGet](https://github.com/oneget/oneget) (aka PackageManagement) ships with Windows 10 and WMF 5.0 and allows you to download packages from the Chocolatey repository, as well as manage the MSI-installed programs you already have. In the future this will likely include many more sources like the Windows app store, Python packages and Ruby gems.
