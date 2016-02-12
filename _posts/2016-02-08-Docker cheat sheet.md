@@ -1,6 +1,6 @@
 ---
 title: Docker cheat sheet
-author: Rowan Titlestad & Richard Young
+author: Rowan Titlestad
 ---
 
 Here are a list of common docker commands we have been using on our project that involves the use of Docker 
