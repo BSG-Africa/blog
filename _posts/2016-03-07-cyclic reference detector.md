@@ -1,6 +1,7 @@
 **Cyclic Reference detector**
 
 This blog covers a contribution I did for an open source library [shazamcrest](https://github.com/shazam/shazamcrest). Shazamcrest is a useful tool used for assertion of unit tests. The library works very well until you try to use it on objectd that has cyclic reference on any level, which resulsts in StackOverflowException.
+<!--more-->
 
 [This issue was resolved by another developer](http://www.briandupreez.net/2014/07/tdd-hamcrest-shazamcrest.html), but to get around this, one has to know all the classes that would cause the StackOverflowException. This was an issue because some objects could have many levels, and finding all those objects with cyclic reference would be cumbersome. [My contribution](https://github.com/shazam/shazamcrest/blob/master/src/main/java/com/shazam/shazamcrest/CyclicReferenceDetector.java) was to detect all objects that would cause the StackOverflowException on the fly so that a developer does not have to care about the structure of the DTO.
 
