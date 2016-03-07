@@ -1,4 +1,7 @@
-**Cyclic Reference detector**
+---
+title: Cyclic Reference detector
+author: Rotondwa Ratshidaho
+---
 
 This blog covers a contribution I did for an open source library [shazamcrest](https://github.com/shazam/shazamcrest). Shazamcrest is a useful tool used for assertion of unit tests. The library works very well until you try to use it on objectd that has cyclic reference on any level, which resulsts in StackOverflowException.
 
