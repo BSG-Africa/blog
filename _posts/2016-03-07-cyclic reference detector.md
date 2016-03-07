@@ -18,7 +18,7 @@ function find_objects_with_cyclic_reference (object)
 		find_objects_with_cyclic_reference(field value)
 ```
 
-The graph below shows how the algorithm works. A circle represents an Objects, a black objects shows the object being processed. Red circle represent an object than can cause StackOverflowException.
+The graph below shows how the algorithm works. A circle represents an object, a circle filled in black colour shows the object being processed, circle filled in red represent an object than can cause StackOverflowException.
 
 <center>
   <img title="Graphical representation of how an object with cyclic reference is detected." src="{{ site.baseurl }}/images/wizard.jpg"/>
