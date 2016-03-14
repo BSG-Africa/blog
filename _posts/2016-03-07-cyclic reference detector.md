@@ -21,7 +21,7 @@ function find_objects_with_cyclic_reference (object)
 The graph below shows how the algorithm works. A circle represents an object, a circle filled in black colour shows the object being processed, circle filled in red represent an object than can cause StackOverflowException.
 
 <center>
-  <img title="Graphical representation of how an object with cyclic reference is detected." src="{{ site.baseurl }}/images/wizard.jpg"/>
+  <img title="Graphical representation of how an object with cyclic reference is detected." src="{{ site.baseurl }}/images/The Graph travesal.gif"/>
 </center>
 
 From the graph above, one can see that this is a [`Depth-first search`](https://en.wikipedia.org/wiki/Depth-first_search) algorithm, and we are searching for an object that we have already traversed.
