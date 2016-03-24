@@ -12,6 +12,11 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+collections:
+  authors:
+    permalink: /authors/:path/
+    output: true
+
 defaults:
   -
     scope:
@@ -25,3 +30,9 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  -
+    scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"

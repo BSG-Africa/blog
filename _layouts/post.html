@@ -8,9 +8,12 @@
         <span>&nbsp;</span>
     </div>
     <div class="columns medium-9">
+        {% assign authors = site.authors | where:"author",page.author %}
+        {% assign author = authors[0] %}
         <section>
             <h3>{{ page.title }}</h3>
-            <h6>{{ page.author }} &dash; {{ page.date | date_to_string }}</h6>
+            <h6><a href="{{ site.baseurl }}{{ author.url }}">
+                {{ author.display_name }}</a> &dash; {{ page.date | date_to_string }}</h6>
             <hr>
             {{ content }}
         </section>

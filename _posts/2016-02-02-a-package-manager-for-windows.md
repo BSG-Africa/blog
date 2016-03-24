@@ -1,6 +1,6 @@
 ---
 title: A package manager for Windows
-author: Richard Young
+author: richardyoung
 ---
 One of my biggest gripes with developing software on Windows, is how hard it is to install software. In a world where scripting *everything* means saving hours of time, Windows simply cannot stack up to its Unix-based competitors. <!--more-->
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to find your way around a large code base using IntelliJ IDEA"
-author: Niel De Wet
+author: nieldewet
 date:   2016-03-18 15:00:00 +0200
 ---
 

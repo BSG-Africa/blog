@@ -1,6 +1,6 @@
 ---
 title: Setting competency-based goals
-author: Niel de Wet
+author: nieldewet
 ---
 
 For my current performance review cycle, I decided to experiment with goals worded in terms of competencies, rather than tasks. The purpose of which is to focus on developing competencies, instead of just measuring tasks completed.<!--more-->

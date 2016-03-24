@@ -1,6 +1,6 @@
 ---
 title: Cyclic Reference detector
-author: Rotondwa Ratshidaho
+author: rotondwa
 ---
 
 This blog covers a contribution I did for an open source library [shazamcrest](https://github.com/shazam/shazamcrest). Shazamcrest is a useful tool used for assertion of unit tests. Assertions on complete beans are made simpler by serialising the actual and expected beans to json, and then compare the two resulting jsons. The difference between the two json are shown using the comparison functionalities of IDEs like Eclipse or IntelliJ. The library works very well until you try to use it on objects that has cyclic reference on any level, which results in StackOverflowException.
