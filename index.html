@@ -4,9 +4,12 @@ title: BSG Developer Blog
 ---
 
 {% for post in site.posts %}
+    {% assign authors = site.authors | where:"author",post.author %}
+    {% assign author = authors[0] %}
     <article>
         <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-        <h6>by <a href="#">{{ post.author }}</a> &dash; {{ post.date | date_to_string }}</h6>
+        <h6>by <a href="{{ site.baseurl }}{{ author.url }}">
+        {{ author.display_name }}</a> &dash; {{ post.date | date_to_string }}</h6>
 
         <div class="row">
             <div class="large-12 columns excerpt">

@@ -1,5 +1,32 @@
 # blog
 
+Before You Start: Create Author Page
+------------------------------------
+Before writing a post, first create an author page for yourself and place it in
+the `_authors` folder. This will put your display name on all your posts on the
+home page and on the post itself. It will also create a page for you at
+`/authors/authorname/`
+
+Add the following content:
+
+~~~
+---
+author: authorname
+display_name: Your Name
+gravatar: gravatar-hash
+---
+
+A short paragraph or two about yourself.
+~~~
+
+To generate your gravatar hash, first register on gravatar.com, then run
+`echo -n your.email@example.com | md5sum`
+
+
+Writing Posts
+-------------
+Ensure that you first create an author page.
+
 Posts go in the `_posts` folder and need to be named `YYYY-MM-DD-<whatever>.(html|md)`
 
 The files need to have a FrontMatter section setting the title and author of the post (and maybe other stuff as well, later on).
@@ -8,7 +35,7 @@ E.g.
 ~~~
 ---
 title: The title of the post
-author: Your Name
+author: authorname
 ---
 ~~~
 
