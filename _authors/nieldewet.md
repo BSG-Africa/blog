@@ -3,7 +3,7 @@ author: nieldewet
 display_name: Niel de Wet
 github: nieldw
 twitter: nieldewet
-gravatar: 0a9b8c1333a7ad0dddf85bf84e6622c3
+gravatar: 2849c23bcba7baffe06baf002ebbb832
 web: http://stackoverflow.com/cv/nieldewet
 ---
 
