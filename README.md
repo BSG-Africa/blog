@@ -22,6 +22,12 @@ A short paragraph or two about yourself.
 To generate your gravatar hash, first register on gravatar.com, then run
 `echo -n your.email@example.com | md5sum`
 
+  1. Trim leading and trailing whitespace from an email address
+  2. Force all characters to lower-case
+  3. md5 hash the final string
+
+More details are available on Gravatar's
+[page](http://en.gravatar.com/site/implement/hash/).
 
 Writing Posts
 -------------
