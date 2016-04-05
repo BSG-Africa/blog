@@ -17,7 +17,7 @@ members learn the names of our roughly 180 colleagues. We integrated with our
 internal instance of [http://myworklife.com](MyWorkLife) to get the photos and
 basic information of our colleagues. In the game you are either presented with
 four photos and a name to match, or a photo and four names. The game also
-includes instructions and a leaderboard. Because data from MyWorkLife is
+includes instructions and a leader board. Because data from MyWorkLife is
 exposed users are required to log in.
 
 Our team consisted of eight developers; three at our Cape Town office, and five
@@ -28,7 +28,7 @@ product owner, and I played the role of team lead and Scrum master.
 
 The main objectives of this exercise was to give the developers experience in
 agile software development, working in team, and using the common technologies
-typically used by our Java consultants. Above all we focussed on the extreme
+typically used by our Java consultants. Above all we focused on the extreme
 programming practices like pair programming and test driven development (TDD). They
 also had plenty of opportunity to practice working in a Scrum team because we had
 four sprints of one week each. We started each week with planning and ended it
@@ -39,7 +39,7 @@ regions.
 #### Principles
 
 We emphasised the importance continuous integration and continuous delivery.
-The first tasks were focussed on setting up a build pipeline in Jenkins that
+The first tasks were focused on setting up a build pipeline in Jenkins that
 is able to release to our staging server in one click using Docker images. The
 system has to be ready to deploy at all times.
 
@@ -75,7 +75,7 @@ Certainly the hardest thing to learn was how to write good tests, and
 especially how to practice TDD. Most of the graduates had never written an
 automated test before. We went through many cycles of demonstrating, pairing,
 reviewing and coaching, and slowly but surely the ice started to thaw as they
-started to grasp testing. We kept it simple and focussed only on unit testing
+started to grasp testing. We kept it simple and focused only on unit testing
 and handcrafted our own stubs to isolate code. It took a long time before the
 tests reached a level of quality that added value and agility, but we did it!
 
@@ -91,14 +91,14 @@ migrations, and integrating with another system.
 
 > “I have learnt the concepts of Java 8, Build tools: Maven, Jenkins and Docker
 > and the Spring and Hibernate frameworks, I have also along the way learnt the
-> benefits and organization of a scrum team.” _-Marvin_
+> benefits and organisation of a scrum team.” _-Marvin_
 
 > “This project has taught me so much about being a software developer in an
 > agile environment. Besides the new technologies I learnt, the most valuable
 > concept I take home was how to use TDD and how it affects your code design.”
 > _-Patrick_
 
-> “Great experience practicing Agile development, through facilitating
+> “Great experience practising Agile development, through facilitating
 > stand-ups, constant engagement with Product Owner  to the importance of the
 > SCRUM board moving efficiently. PO work and the importance of keeping Risks &
 > Issues up to date and structured correctly.” _-Justin, Business Analyst_
@@ -117,4 +117,4 @@ why we chose this project in the first place, because there is more than enough
 scope to keep the team busy for the full duration of the exercise. The biggest
 success was that everyone on the team gained valuable experience in working in
 a distributed team, with some of today's most important technologies, and
-practiced agile principles and extreme programming.
+practised agile principles and extreme programming.
