@@ -14,7 +14,7 @@ failure is not fatal. <!--more-->
 
 For this project we decided to create a simple memory game to help new team
 members learn the names of our roughly 180 colleagues. We integrated with our
-internal instance of [http://myworklife.com](MyWorkLife) to get the photos and
+internal instance of [MyWorkLife](http://myworklife.com) to get the photos and
 basic information of our colleagues. In the game you are either presented with
 four photos and a name to match, or a photo and four names. The game also
 includes instructions and a leader board. Because data from MyWorkLife is
@@ -64,12 +64,12 @@ to the successful delivery of the project.
 
 #### The learning
 
-When we started the project everything was unfamiliar to the team, like setting
-up a project using Maven. We didn't set up anything beforehand, except to VM's
-and an empty repository on GitHub. We could have created some scaffolding with
-dependencies and basic configuration, but in hindsight we agree that even
-though the progress on features was slower the team gained a deeper
-understanding of the various technologies in this way.
+When we started the project everything was unfamiliar to the team. We didn't
+set up anything beforehand, except two VM's and an empty repository on GitHub.
+We could have created some scaffolding with dependencies and basic
+configuration, but in hindsight we agree that even though the progress on
+features was slower the team gained a deeper understanding of the various
+technologies in this way.
 
 Certainly the hardest thing to learn was how to write good tests, and
 especially how to practice TDD. Most of the graduates had never written an
@@ -82,10 +82,10 @@ tests reached a level of quality that added value and agility, but we did it!
 With the team distributed across regions another key experience was learning to
 collaborate in a distributed team. We placed a lot of focus on our standups,
 and reflected almost daily on how to work together more effectively. Different
-Slack channels we used announcements and collaboration, and Google Hangouts
-were used to pair and mob across regions.
+Slack channels were used for announcements and collaboration, and Google
+Hangouts with screen sharing was used to pair and mob across regions.
 
-Some of the other real world experience gained was deploying a system with
+Some of the other real world experiences gained were deploying a system with
 active users, making sure the system is available for testing, doing database
 migrations, and integrating with another system.
 
