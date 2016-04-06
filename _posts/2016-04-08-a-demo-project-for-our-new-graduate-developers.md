@@ -22,7 +22,9 @@ exposed users are required to log in.
 
 Our team consisted of eight developers; three at our Cape Town office, and five
 at our Johannesburg office. We also had two graduate business analysts, a
-product owner, and I played the role of team lead and Scrum master.
+product owner, and I played the role of team lead and Scrum master. Several
+others of our colleagues also provided support and coaching, and everyone was
+happy to do user interviews and test. Thanks for all the support!
 
 #### The outcomes
 
