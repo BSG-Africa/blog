@@ -1,7 +1,7 @@
 ---
 title: "Turning graduate developers into productive consultants"
 author: nieldewet
-date: 2016-04-20 17:00:00 +0200
+date: 2016-04-20 14:00:00 +0200
 ---
 
 In February this year, eight fresh-faced graduate developers joined our team.
