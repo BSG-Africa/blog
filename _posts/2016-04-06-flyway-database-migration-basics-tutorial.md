@@ -13,7 +13,7 @@ Hibernate can handle some changes but it is less convenient when it comes to mig
 
 #### How it works:
 
-To use flyway in your application, you need to define your flyway properties in your application.properties file, you have the option of configuring your DataSource in this file also but I have in my limited experience with the technology found that it is not such a great idea to do so, rather do so in your java configuration setup because, it becomes easier for you to configure different DataSources for your test and production databases, more to follow on flyway tests.
+To use flyway in your application, you need to define your flyway properties in your application.properties file, you have the option of configuring your data source in this file also but I have in my limited experience with the technology found that it is not such a great idea to do so, rather do so in your java configuration setup because, it becomes easier for you to configure different data sources for your test and production databases, more to follow on flyway tests.
 
 {% highlight java %}
 # Flyway properties
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS sample_table(
 );
 {% endhighlight %}
 
-One thing that one should be very careful of is setting the `baseline-on-migrate` property on flyway, this should only be done on an initial flyway run, this propery overrides one flyway's "safety checks" which ensures that only 'safe' migrations are executed, on setting this property to true which is otherwise set to false by default, flyway allows migrations onto a non-empty and "unversioned" schema, unversioned because, flyway creates a table named `schema_version` on its initial run and maintains such a table on subsequent runs, you will soon
+One thing that one should be very careful of is setting the `baseline-on-migrate` property on flyway, this should only be done on an initial flyway run, this properly overrides one flyway's "safety checks" which ensures that only 'safe' migrations are executed, on setting this property to true which is otherwise set to false by default, flyway allows migrations onto a non-empty and "unversioned" schema, unversioned because, flyway creates a table named `schema_version` on its initial run and maintains such a table on subsequent runs, you will soon
 realize how this works because once you manually alter the schema or any of its constituents, flyway will fail to validate the integrity of your database schema, which would require you to drop your schema_version or perhaps your whole schema if your migration scripts do not
 offer the flexibility of a fresh database or have checksums for existence of tables.
 
@@ -66,11 +66,11 @@ public class DatabaseMigrationService {
 }
 {% endhighlight %}
 
-One should also decide when to run the flyway migrations, it is generally a good idea to do so as soon as the datasource bean is constructed, I have mainly favoured the `PostConstruct` annotaion (This will run migrations everytime the application starts up) in my usages of flyway, to intitialize flyway in your java code one needs to create a new Flyway object, then set Flyway properties on the fly (if applicable), and finally call the flyway migrate method.
+One should also decide when to run the flyway migrations, it is generally a good idea to do so as soon as the data source bean is constructed, I have mainly favoured the `PostConstruct` annotation (This will run migrations every time the application starts up) in my usages of flyway, to initialize flyway in your java code one needs to create a new Flyway object, then set Flyway properties on the fly (if applicable), and finally call the flyway migrate method.
 To ensure that Flyway runs without any snags one should set the `ddl.auto` property on their hibernate properties to "validate", otherwise flyway will throw an exception upon initialization of the
 migrate method. 
 
-To perform tests with flyway one needs to setup a new test datasource unless if of course you wish to use the same database for testing, though I cannot think of a logical reason why one might need to do that. Setting a separate datasource for your tests will require you to have scripts that initialize a blank database since the most commonly used testing databases are in-memory databases.
+To perform tests with flyway one needs to setup a new test data source unless if of course you wish to use the same database for testing, though I cannot think of a logical reason why one might need to do that. Setting a separate data source for your tests will require you to have scripts that initialize a blank database since the most commonly used testing databases are in-memory databases.
 
 Another maven dependency by the name flyway-test-extensions needs to be installed to run flyway database migrations in your integration tests, one needs to annotate each test with the annotation, FlywayTest, there are two ways in which one can do this, annotate each method in your test with the FlywayTest annotation or annotate the whole class. When a whole class is annotated, flyway will only create the database once and all the methods within the class will share the same database instance (Faster!!!), where else if each method is annotated, each method will have its own database instance created by flyway and will not share with all the other tests in the class. Please note that, this is easier to do with in memory databases such as Hyper SQL and the Apache Derby databases.
 
@@ -115,4 +115,4 @@ Maven dependencies for both Flyway and Flyway Test:
 </dependency>
 {% endhighlight %}
 
-In conclusion, Flyway is a very neat tool that aids the development environment immensely, especially one where there are a lot of developers working on the same code base, Flyway serves as an automated synchronization tool for all the developers' local databases and the production database. When used appropriately, this can greately increase productivity and ensure that the production environment runs like a swiss watch regardless of changes to the relations in the database.
+In conclusion, Flyway is a very neat tool that aids the development environment immensely, especially one where there are a lot of developers working on the same code base, Flyway serves as an automated synchronization tool for all the developers' local databases and the production database. When used appropriately, this can greatly increase productivity and ensure that the production environment runs like a swiss watch regardless of changes to the relations in the database.
