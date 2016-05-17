@@ -19,7 +19,12 @@ gravatar: gravatar-hash
 A short paragraph or two about yourself.
 ~~~
 
-To generate your gravatar hash, first register on gravatar.com, then run
+To generate your gravatar hash, first register on gravatar.com, then navigate to "My Gravatars" page on gravatar.com,
+under "Pick email to modify", click on "View rating" and look for
+
+- Email Hash: You should see your hash here
+
+Alternatively you can manually generate your gravatar hash, run
 `echo -n your.email@example.com | md5sum`
 
   1. Trim leading and trailing whitespace from an email address
