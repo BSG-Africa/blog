@@ -4,8 +4,6 @@ author: vikrambindal
 date: 2016-04-20 14:00:00 +0200
 ---
 
-#### Introduction
-
 As software developers, we often strive towards greatness by adhering to design principles 
 and patterns, applying enterprise frameworks that support the stack requirements of the 
 application, following coding conventions and achieving high level of software quality through 
@@ -15,7 +13,7 @@ such that the software is ready for shipment at any given moment in time. At suc
 various factors such as introducing new features, bug fixes, configuration changes, product 
 enhancements, on-demand releases creep in that can affect the delivery process resulting the 
 teams to question the reliability of quality, costs incurred and most importantly risks involved 
-that can affect operations of a business.
+that can affect operations of a business.<!--more-->
 
 #### Continuous Delivery 
 
