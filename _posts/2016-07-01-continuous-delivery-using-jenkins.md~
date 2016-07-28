@@ -10,10 +10,10 @@ application; following coding conventions and achieving high level of software q
 implementation of various testing paradigms - present within the development community. While 
 this is great, from a business point of view we are often required to be agile in our approach, 
 such that the software is ready for shipment at any given moment in time. Factors such as 
-introducing new features, bug fixes, configuration changes, product enhancements and on-demand 
-releases can creep in and impact the delivery process; resulting in the teams questioning the 
-reliability of quality, costs incurred and most importantly any risks that can affect business 
-operations.<!--more-->
+introducing new features, bug fixes, configuration changes, product enhancements and 
+on-demand releases can creep in and impact the delivery process; resulting in the teams 
+questioning the reliability of quality, costs incurred and most importantly any risks that can 
+affect business operations.<!--more-->
 
 #### Continuous Delivery 
 
@@ -24,12 +24,13 @@ to production at any time. The goal of CD is to keep software in a release state
 time throughout its life cycle, and enable a repetitive and reliable way to deploy software to 
 any environment - should the need arise.
 
-A typical strategy followed across teams is to use a build tool capable of performing common 
-tasks such as build and test; and custom tasks such as a job performed on a daily (nightly) 
-basis and whenever a code is committed to a Source Code Management (SCM) repository. This 
-enables the team to achieve software's health report, as well as taking preventive measures for 
-failures on a pro-active basis. Some of the most common build tools being used are
-[Jenkins](https://jenkins.io/), [Go CD](https://www.go.cd), [Travis-CI](https://travis-ci.org/), [Circle-CI](https://circleci.com/).There are many more related products, unique in their own offering, with agent or agent-less architecture.
+A typical strategy followed from a DevOps perspective across teams is to use a build tool capable 
+of performing common tasks such as build-test and any other custom tasks the application might 
+have. These tasks configured as jobs are performed on a daily (nightly) basis and whenever a 
+code is committed to a Source Code Management (SCM) repository, a job is run performing the 
+operations desired. This enables the team to achieve software's health report, as well as taking 
+preventive measures for failures on a pro-active basis. Some of the most common build tools being 
+used are [Jenkins](https://jenkins.io/), [Go CD](https://www.go.cd), [Travis-CI](https://travis-ci.org/), [Circle-CI](https://circleci.com/).There are many more related products, unique in their own offering, with agent or agent-less architecture.
 
 #### Pipelines
 
@@ -57,8 +58,8 @@ client-specific tasks - forming the build life-cycle. As can be seen, there are 
 at play here. A common notion used in pipelines are the keywords "up-stream" and "down-stream". 
 Up-stream refers to the parent job of execution, at a stage before the current stage, whereby 
 materials/artefacts required further down the life-cycle can be used. Down-stream refers to the 
-stages composed of execution after the predecessor stage, to consume the artefacts/materials from 
-the parent - relevant to continue the job. This is very much like a relay in athletics, with the 
+stages composed of execution after the predecessor stage, to consume the artefacts/materials 
+from the parent - relevant to continue the job. This is very much like a relay in athletics, with the 
 baton passed from one runner to another, transitioning across multiple runners during the course 
 of the race to reach the finish line.
 
@@ -73,20 +74,20 @@ This plug-in assists in cloning the workspace of the parent/up-stream project in
 This plug-in is essential and important to configure pipelines in Jenkins and offers various 
 configurations and triggers on how the down-streams can execute from the up-stream tasks. 
 [Delivery Pipeline Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Delivery+Pipeline+Plugin): 
-This plug-in serves as a view for us to visualise the pipeline build life-cycle and see various elements 
-at play e.g. time taken to complete each phase, job execution number, job status, job results reports 
-(if any), etc. 
+This plug-in serves as a view for us to visualise the pipeline build life-cycle and see various 
+elements at play e.g. time taken to complete each phase, job execution number, job status, job 
+results reports (if any), etc. 
 [Parameterized Trigger Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Parameterized+Trigger+Plugin): 
 This plug-in offers the advantage of having a configurable build, through the use of parameters, 
 that a build may require to achieve flexibility in configuration.
 [Join Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Join+Plugin): 
-This plug-in helps in the fan-in process where concurrent tasks can collaborate before the next series
-of tasks can execute. Through this, it ensures that while concurrent tasks for a certain phase are 
-still executing, if one of them finishes - propagation down the pipeline doesn't happen until all 
-concurrent tasks in phases have finished executing. 
+This plug-in helps in the fan-in process where concurrent tasks can collaborate before the next 
+series of tasks can execute. Through this, it ensures that while concurrent tasks for a certain 
+phase are still executing, if one of them finishes - propagation down the pipeline doesn't happen 
+until all concurrent tasks in phases have finished executing. 
 [Environment Inject Plugin](https://wiki.jenkins-ci.org/display/JENKINS/EnvInject+Plugin): 
-This plug-in makes it easier to introduce user defined environment variables throughout the use of a 
-build. This is especially useful when we read values from a properties’ file and want to use that in 
+This plug-in makes it easier to introduce user defined environment variables throughout the use of 
+a build. This is especially useful when we read values from a properties’ file and want to use that in 
 our build process. 
 
 The above listed plug-ins can be installed in Jenkins through the "Manage Plug-ins" sections under 
