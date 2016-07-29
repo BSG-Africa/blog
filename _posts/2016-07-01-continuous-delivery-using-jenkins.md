@@ -18,19 +18,24 @@ affect business operations.<!--more-->
 #### Continuous Delivery 
 
 
-The concerns raised above can be achieved using Continuous Delivery (CD). CD is an 
-engineering approach which assists in developing software in such a way that it can be deployed 
-to production at any time. The goal of CD is to keep software in a release state at any given 
-time throughout its life cycle, and enable a repetitive and reliable way to deploy software to 
-any environment - should the need arise.
+The concerns raised above can be mitigated using Continuous Delivery (CD). The goal of CD is to 
+keep software in a release state at any given time throughout its life cycle, and enable a 
+repetitive and reliable way to deploy software to any environment - should the need arise.
 
 A typical strategy followed from a DevOps perspective across teams is to use a build tool capable 
-of performing common tasks such as build-test and any other custom tasks the application might 
-have. These tasks configured as jobs are performed on a daily (nightly) basis and whenever a 
-code is committed to a Source Code Management (SCM) repository, a job is run performing the 
-operations desired. This enables the team to achieve software's health report, as well as taking 
-preventive measures for failures on a pro-active basis. Some of the most common build tools 
-being used are [Jenkins](https://jenkins.io/), [Go CD](https://www.go.cd), [Travis-CI](https://travis-ci.org/), [Circle-CI](https://circleci.com/).There are many more related products, unique in their own offering, with agent or agent-less architecture.
+of performing common tasks such as build, test and any other custom tasks the application might 
+have. These tasks that are configured as jobs are scheduled to run on a daily (nightly) basis 
+and/or whenever a code is committed to a Source Code Management (SCM) repository. This 
+offers several benefits:
+
+
+- It enables the team to ensure the state of the software is always healthy.
+- Any bug introduced is outlined through proper test coverage and developers can resolve issues.
+- If the state of the software is healthy, it allows deployment at any given time to multiple environments.
+- The process of the build is fully automated and increases reliability.
+- Risks involved in enhancing or introducing new features becomes low.
+
+Some of the most common build tools being used are [Jenkins](https://jenkins.io/), [Go CD](https://www.go.cd), [Travis-CI](https://travis-ci.org/), [Circle-CI](https://circleci.com/).There are many more related products, unique in their own offering and architecture which might or not be agent based. 
 
 #### Pipelines
 
@@ -61,12 +66,15 @@ materials/artefacts required further down the life-cycle can be used. Down-strea
 stages composed of execution after the predecessor stage, to consume the artefacts/materials 
 from the parent - relevant to continue the job. This is very much like a relay in athletics, with the 
 baton passed from one runner to another, transitioning across multiple runners during the course 
-of the race to reach the finish line.
+of the race to reach the finish line. Each job in a stage can produce it's own artefacts/marterials,
+for example, a test stage can produce test artefacts which might be used by a test coverage report
+to produce test results, or a custom client specific task can produce a bundled resource which 
+might be used by a subsequent task for deployment to a server. 
 
 With the release of Jenkins 2, the pipelines are bundled in as part of the distribution and offer
-ways to achieve these through DSL and scripting. Personally, I still prefer the various plug-ins 
-offered through Jenkins 1 distribution, to assist in creating these pipelines. Some of the commonly 
-used plug-ins are mentioned below and are often must-haves to create a pipeline.
+ways to achieve these through DSL and scripting language. Personally, I still prefer the various 
+plug-ins offered through Jenkins 1 distribution, to assist in creating these pipelines. Some of the 
+commonly used plug-ins are mentioned below and are often must-haves to create a pipeline.
 
 [Clone Workspace SCM Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Clone+Workspace+SCM+Plugin): 
 This plug-in assists in cloning the workspace of the parent/up-stream project into a downstream project.
