@@ -1,7 +1,7 @@
 ---
 title: "Continuous Delivery And Pipelines"
 author: vikrambindal
-date: 2016-04-20 14:00:00 +0200
+date: 2016-07-29 14:00:00 +0200
 ---
 
 As software developers, we often strive towards greatness by adhering to design principles 
