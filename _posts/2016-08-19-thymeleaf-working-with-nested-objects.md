@@ -10,11 +10,12 @@ Setting up a Spring application can be painful before even getting to the logic 
 The spring-boot project takes away the pain to get Spring up and running as it is designed to simplify the bootstrapping and development of a new Spring application. Although it may look like a developer is giving away control in letting spring boot automate the configurations 
 of dependencies elements found in the POM file, one can still disable autoconfiguration of modules as needed and opt for custom implementations. 
 
-This blog will however not cover spring-boot itself, it has been shown that 140 characters can be enough to get a web application up and running with [spring-boot](http://www.slideshare.net/andypiper/andy-p-boot). I will cover my experience of working with nested objects entities in hibernate using thymeleaf. 
+This blog will however not cover spring-boot itself, it has been shown that 140 characters can be enough to get a [web application up and running with spring-boot](http://www.slideshare.net/andypiper/andy-p-boot). I will cover my experience of working with nested objects entities in hibernate using thymeleaf. 
 
 Consider a graph that is represented by vertices (locations) and edges (routes), then overlay the routes with traffics to solve the good old shortest path problem. Representing vertices, edges and traffics with POJO classes can be quite straight forward, but I wanted to take advantage of Hibernate capability which facilitates the mapping of collections and associations between entity classes, thus allowing the POJO classes to be persisted to the database with their parent-child relationships.
 
 ###Hibernate models
+The design of the models below is to have an object Vertex holding all edges connected to it, subsequently, the edges will hold all traffic objects related to them. This relationship allows easy handling of CRUD operations for a small project like this. This means deleting a vertex should also delete the edges and traffics associated with it; Deleting an edge should only delete the traffic associated with it and not the vertex; Lastly, deleting the traffic object should only delete that object and remove any association to the edges. This is represented by the models below.
 **Vertex:**
 ```
 @Id
@@ -43,7 +44,16 @@ private Vertex destination;
 @OneToOne(mappedBy = "route", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
 private Traffic traffic;
 ```
+**Traffic:**
+```
+@Id
+@Column
+private Long id;
 
+@OneToOne(fetch = FetchType.LAZY)
+@JoinColumn(name = "edge_id")
+private Edge route;
+```
 ###Thymeleaf.
-
+No need for DTOs
 > Written with [StackEdit](https://stackedit.io/).
