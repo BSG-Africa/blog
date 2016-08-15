@@ -4,3 +4,5 @@ _site/
 .DS_Store
 *~
 _posts/*-welcome-to-jekyll.markdown
+*.swp
+*.bak
