@@ -1,3 +1,9 @@
+---
+title: "Thymeleaf - Working with nested objects"
+author: kapeshifk
+date: 2016-08-19 16:00:00 +0200
+---
+
 I recently joined BSG and on day one I was tasked to work on a graph theory assignment project that required usage of Spring Framework, Hibernate and web-based technology. Without prior experience of the Spring Framework, the challenge was to get my Spring application up and running with the datasource, persistence, and web configurations. After difficulties playing with the configurations, I stumbled upon [Spring Boot](http://projects.spring.io/spring-boot/), the answer to all Spring non-adopters, myself included coming from a Java Enterprise Edition (JEE, or the always known J2EE) background. 
 
 Setting up a Spring application can be painful before even getting to the logic implementation. No wonder the [love and hate](https://spring.io/blog/2015/11/29/how-not-to-hate-spring-in-2016) relationship.
