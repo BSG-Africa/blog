@@ -18,9 +18,9 @@ This blog will however not cover Spring Boot itself, it has been reported that 1
 </dependency>
 ``` 
 
+####Hibernate models
 Considering a graph that is represented by vertices (locations) and edges (routes) that are overlaid by traffics to solve the good old shortest path problem. Representing vertices, edges and traffics with POJO classes can be quite straight forward, but I wanted to take advantage of Hibernate capability which facilitates the mapping of collections and associations between entity classes, thus allowing the POJO classes to be persisted to the database with their parent-child relationships.
 
-####Hibernate models
 The design of the models below is to have an object Vertex holding all edges connected to it, subsequently, the edges holding all traffic objects related to them. This relationship allows easy handling of CRUD operations for a small project like this. This means deleting a vertex should also delete the edges and traffics associated with it; Deleting an edge should only delete the traffic associated with it and not the vertex; Lastly, deleting the traffic object should only remove any association to the edge and delete that object. The models are as follows.
 
 **Vertex:**
