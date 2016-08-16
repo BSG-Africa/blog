@@ -23,7 +23,7 @@ Considering a graph that is represented by vertices (locations) and edges (route
 ####Hibernate models
 The design of the models below is to have an object Vertex holding all edges connected to it, subsequently, the edges holding all traffic objects related to them. This relationship allows easy handling of CRUD operations for a small project like this. This means deleting a vertex should also delete the edges and traffics associated with it; Deleting an edge should only delete the traffic associated with it and not the vertex; Lastly, deleting the traffic object should only remove any association to the edge and delete that object. The models are as follows.
 
-**Vertex:**
+>**Vertex:**
 ```
 @Id
 @Column
@@ -36,7 +36,7 @@ private List<Edge> sourceEdges = new ArrayList<>();
 private List<Edge> destinationEdges = new ArrayList<>();
 ```
 
-**Edge:**
+>**Edge:**
 ```
 @Id
 @Column
@@ -51,7 +51,7 @@ private Vertex destination;
 @OneToOne(mappedBy = "route", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
 private Traffic traffic;
 ```
-**Traffic:**
+>**Traffic:**
 ```
 @Id
 @Column
