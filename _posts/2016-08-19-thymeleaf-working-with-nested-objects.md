@@ -9,7 +9,7 @@ I recently joined BSG and on day one I was tasked to work on a graph theory assi
 Setting up a Spring application can be painful before even getting to the logic implementation. No wonder the [love and hate](https://spring.io/blog/2015/11/29/how-not-to-hate-spring-in-2016) relationship.
 The Spring Boot project takes away the pain to get Spring up and running as it is designed to simplify the bootstrapping and development of a new Spring application. Although it may look like a developer is giving away control in letting Spring Boot automate the configurations of the POM file dependencies, one can still disable autoconfiguration of a module as needed and opt for a custom implementation. 
 
-This blog will however not cover Spring Boot itself, it has been reported that 140 characters can be enough to get a [web application up and running with Spring Boot](http://www.slideshare.net/andypiper/andy-p-boot). I will cover my experience of working with Hibernate entities using Thymeleaf. The dependency below is all I needed to include Thymeleaf in my Spring Boot application and included all my HTML pages in the templates folder under resources.
+This blog will however not cover Spring Boot itself, it has been reported that 140 characters can be enough to get a [web application up and running with Spring Boot](http://www.slideshare.net/andypiper/andy-p-boot). I will cover my experience of working with Hibernate entities using Thymeleaf. The dependency below is all I needed to include Thymeleaf in my Spring Boot application and also added all my HTML pages in the templates folder under resources.
 
 ```
 <dependency>
