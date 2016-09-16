@@ -66,3 +66,4 @@ The following assumes you are using Windows
  5.  Now you can preview the site by navigating to the directory of the blog and running `jekyll serve`
 
  Github forces us to switch to kramdown/rouge for markdown parsing and syntax-highlighting. Not sure what that means for windows users yet. Might make all the redcarpet/devkit stuff obsolete.
+
