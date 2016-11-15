@@ -27,11 +27,6 @@ node[^swarm]
 services and tasks[^swarm]
 
 #### Plan your swarm
-<!--
-1. Master: `swarm init`
-2. Work nodes: Docker eng, network connection to master
-3. Storage
--->
 Start by planning how many nodes will be in your swarm, and which node will be the swarm master. The swarm master takes care of the orchestration of the whole swarm, and is also a worker node. First install Docker engine on each node, including the swarm master. 
 
 ##### Swarm master
@@ -81,21 +76,35 @@ $ docker volume create --name teamcity_datadir --driver azurefile --opt share=te
 $ docker volume create --name teamcity_logsdir --driver azurefile --opt share=teamcityswarmlogs
 ```
 
-<!-- TODO : Volumes for agents -->
-
 With a storage solution in place we are now ready to configure our services.
 
 #### Configure services
-<!--
-1. Overlay network
-2. TeamCity server
-3. TeamCity agent with Docker support
--->
+##### Overlay network
 To ensure that the tasks in the swarm can communicate with one another, and to provide isolation from other tasks managed by the swarm, create an [overlay network](https://docs.docker.com/engine/swarm/networking/) specific to the TeamCity application. This will allow the server and agent containers to communicate with each other. Set up the network on the swarm manager:
 
 ``` bash
 $ docker network create --driver=overlay teamcity_network
 ```
+
+##### TeamCity server
+We can now deploy the TeamCity server using the Docker image [supplied](https://hub.docker.com/u/jetbrains/) by Jetbrains. Run:
+
+``` bash
+$ docker service create --name teamcity-server --replicas 1 --network teamcity_network --mount type=volume,source=teamcity_datadir,destination=/data/teamcity_server/datadir,volume-label="teamcity" --mount type=volume,source=teamcity_logsdir,destination=/opt/teamcity/logs,volume-label="teamcity" --publish 8111:8111 jetbrains/teamcity-server
+```
+
+The above command does several things. It creates a new service running the `jetbrains/teamcity-server` image. There is one instance of the service and it is part of the `teamcity_network` network. Our two named datavolumes, backed by an Azure storage account, are mounted by the service and labelled, and lastly port 8111 is exposed.
+
+##### TeamCity agents
+The TeamCity server requires build agents to perform its tasks. Let's deploy three replicas of the TeamCity agent Docker image:
+
+``` bash
+$ docker service create --name teamcity-agent --replicas 3 --network teamcity_network --mount type=volume,destination=/data/teamcity_agent/conf --mount type=bind,source=/var/run/docker.sock,destination=/var/run/docker.sock --env SERVER_URL=52.178.44.136:8111 jetbrains/teamcity-agent
+```
+
+In this command we mount an anonymous datavolume for `/data/teamcity_agent/conf` by not specifying a `source`. This ensures that each task gets its own unique volume, and that each volume is removed when its task completes. This means that agent configuration is transient, and especially the authorisation on the server is not persisted.
+To make the Docker daemon available on the agents, `/var/run/docker.sock` is mounted. This is the only option because the `--privileged` flag is not available in swarm mode.
+The SERVER\_URL environment variable is set to the TeamCity server's public URL so that the agent knows where to register itself.
 
 #### Inspecting your swarm
 
