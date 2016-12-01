@@ -18,16 +18,48 @@ Since the release of Docker Engine v1.12.0 [swarm mode](https://docs.docker.com/
 #### Definitions
 
 ##### Swarm
-swarm[^swarm]
+Cluster management and orchestration using Docker is done by Docker Engines running in swarm mode. A swarm is a cluster of Docker Engines where you deploy services. When you run Docker Engine outside of swarm mode, you execute container commands. When you run the Engine in swarm mode, you orchestrate services.
 
 ##### Node
-node[^swarm]
 
 ##### Services and tasks
-services and tasks[^swarm]
+
+
+Read more [here](https://docs.docker.com/engine/swarm/key-concepts/).
 
 #### Plan your swarm
 Start by planning how many nodes will be in your swarm, and which node will be the swarm master. The swarm master takes care of the orchestration of the whole swarm, and is also a worker node. First install Docker engine on each node, including the swarm master. 
+
+##### Create VM's in Azure
+First set up your virtual machines. An Azure virtual machine scale set works well for this, and includes a load balancer. For this example I chose to create a scale set with Ubuntu 14.04.5 LTS. After creating the scale set use the Azure Portal to find the IP address of the scale set load balancer and also examine the _Inbound NAT rules_ to determine the ports targeting port 22, for SSH.
+
+SSH into your first VM and [install](https://docs.docker.com/engine/installation/linux/ubuntulinux/) Docker:
+
+``` bash
+$ sudo apt update
+$ sudo apt install apt-transport-https ca-certificates
+$ sudo apt-key adv \
+               --keyserver hkp://ha.pool.sks-keyservers.net:80 \
+               --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+$ echo deb https://apt.dockerproject.org/repo ubuntu-trusty main | sudo tee /etc/apt/sources.list.d/docker.list
+$ sudo apt update
+$ sudo apt install linux-image-extra-$(uname -r) linux-image-extra-virtual
+$ sudo apt install docker-engine
+```
+
+Start the Docker daemon:
+
+``` bash 
+$ sudo service docker start
+```
+
+Check that Docker has been correctly installed:
+
+``` bash
+$ sudo docker run hello-world
+```
+
+Repeat these steps on each of the VM's in the scale set. Each worker node in your swarm requires its own instance of Docker Engine.
 
 ##### Swarm master
 Initialise the swarm master with the `swarm init` command:
@@ -103,7 +135,7 @@ $ docker service create --name teamcity-agent --replicas 3 --network teamcity_ne
 ```
 
 In this command we mount an anonymous datavolume for `/data/teamcity_agent/conf` by not specifying a `source`. This ensures that each task gets its own unique volume, and that each volume is removed when its task completes. This means that agent configuration is transient, and especially the authorisation on the server is not persisted.
-To make the Docker daemon available on the agents, `/var/run/docker.sock` is mounted. This is the only option because the `--privileged` flag is not available in swarm mode.
+To make the Docker daemon available on the agents, `/var/run/docker.sock` is mounted. This is our only option because the `--privileged` flag is not available in swarm mode.
 The SERVER\_URL environment variable is set to the TeamCity server's public URL so that the agent knows where to register itself.
 
 #### Inspecting your swarm
