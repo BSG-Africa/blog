@@ -3,7 +3,7 @@ title: Docker-Compose script for deploying Shipyard
 author: jaisheelmistry
 ---
 
-We have setup [shipyard](https://shipyard-project.com/) for monitoring docker containers for one of our clients projects. We however encountered that we could not use shipyards [automated deployment script](https://shipyard-project.com/docs/deploy/automated/) due to strict security restrictions. We however do have access to use dockers orchestration tool docker-compose. Below is the docker-compose.yml file that was derived from the manual docker run steps given [here](https://shipyard-project.com/docs/deploy/manual/)  <!--more-->
+We have setup [shipyard](https://shipyard-project.com/) for monitoring docker containers for one of our clients projects. We encountered that we could not use shipyards [automated deployment script](https://shipyard-project.com/docs/deploy/automated/) due to strict security restrictions. We however do have access to use dockers orchestration tool docker-compose. Below is the docker-compose.yml file that was derived from the manual docker run steps given [here](https://shipyard-project.com/docs/deploy/manual/)  <!--more-->
 
 The script below will require you to set the `${HOSTNAME}` and `${IP_OF_HOST}` enviroment variables.
 The `${IP_OF_HOST}` should be the ip address of the docker deamon this can be obtained by running `docker-machine ls`. 
