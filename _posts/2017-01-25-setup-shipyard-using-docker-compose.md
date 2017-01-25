@@ -1,5 +1,5 @@
 ---
-title: Docker Compose script for Deploying shipyard
+title: Docker-Compose script for deploying Shipyard
 author: jaisheelmistry
 ---
 
