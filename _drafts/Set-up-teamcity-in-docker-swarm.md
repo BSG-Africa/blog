@@ -15,7 +15,7 @@ Since the release of Docker Engine v1.12.0 [swarm mode](https://docs.docker.com/
     TODO : Figure out Azure setup, including load balancing[sic].
 -->
 
-#### Definitions
+#### Brief definitions
 
 ##### Swarm
 Cluster management and orchestration using Docker is done by Docker Engines running in swarm mode. A swarm is a cluster of Docker Engines where you deploy services. When you run Docker Engine outside of swarm mode, you execute container commands. When you run the Engine in swarm mode, you orchestrate services.
@@ -98,7 +98,7 @@ As an example, I will show how to set up your swarm to use Azure storage account
 
 On the Azure portal, start by creating a general purpose storage account. Once the storage account is deployed, create a File share by chosing the "Files" service and then adding a file share for each data volume. From the menu on the left under "Settings" choose "Access keys" and note the storage account name and the keys. We will use these to connect to the storage account from our nodes.
 
-In order to access the Azure storage account using network file sharing protocols you need to install the [Docker Volume Driver for Azure File Storage](https://github.com/Azure/azurefile-dockervolumedriver) as a daemon on each node. I have created [a script](https://gist.github.com/nieldw/df5b672ffd70a88c341be24660d817e0) to handle the installation using upstart on hosts running Ubuntu 14.04 or earlier. A key step in the installation process is editing `/etc/default/azurefile-dockervolumedriver` with your Azure storage account credentials. This is also taken care of in the script. 
+In order to access the Azure storage account using network file sharing protocols you need to install the [Docker Volume Driver for Azure File Storage](https://github.com/Azure/azurefile-dockervolumedriver) as a daemon on each node. I created [a script](https://gist.github.com/nieldw/df5b672ffd70a88c341be24660d817e0) to handle the installation using upstart on hosts running Ubuntu 14.04 or earlier. A key step in the installation process is editing `/etc/default/azurefile-dockervolumedriver` with your Azure storage account credentials. This is also taken care of in the script. 
 
 Once the storage account is in place and the drivers are installed we can create the necessary volumes. For the TeamCity server we need two volumes with corresponding file shares on the storage accounts: One for the TeamCity data directory, and one for the TeamCity logs directory. Run these commands to create the volumes on each node:
 
@@ -146,6 +146,4 @@ The SERVER\_URL environment variable is set to the TeamCity server's public URL 
 2. JDBC Driver upload
 -->
 
-<!-- Footnote definitions -->
-<!-- TODO : Be consistent: Inline links, or footnotes -->
-[^swarm]: https://docs.docker.com/engine/swarm/key-concepts/
+#### Conclusion
