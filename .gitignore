@@ -2,6 +2,7 @@ _site/
 .jekyll-metadata
 .idea/
 .DS_Store
+*~
 _posts/*-welcome-to-jekyll.markdown
 *.swp
 *.bak
