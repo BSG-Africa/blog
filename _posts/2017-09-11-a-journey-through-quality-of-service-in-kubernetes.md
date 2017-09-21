@@ -26,12 +26,12 @@ Finally, some stability! We felt we had finally successfully wrangled our still 
 #### Out of resource handling and guaranteed quality of service
 Our current approach is to prescribe how our agents should deal with running out of resources and setting resource requests that align better with typical usage. The kubelet service can be configured with pods eviction rules based on memory and file system usage as a type of self-defence, with soft and hard limits, as well as grace periods and system-reserved memory. You can read more about the settings in the official [documentation](https://kubernetes.io/docs/tasks/administer-cluster/out-of-resource/). Here's an example of the current options that we are setting on the kubelet service:
 
-    --eviction-soft=memory.available<80%,nodefs.available<2Gi \
+    --eviction-soft=memory.available<10%,nodefs.available<2Gi \
 	--eviction-soft-grace-period=memory.available=1m30s,nodefs.available=1m30s \
 	--eviction-max-pod-grace-period=120 \
 	--eviction-hard=memory.available<500Mi,nodefs.available<1Gi \
 	--eviction-pressure-transition-period=30s \
-	--system-reserved=memory=1.3Gi
+	--system-reserved=memory=0.5Gi
 
 Based on these settings, kubelet will evict pods when the agent starts running out of resources, allowing Kubernetes to reschedule them elsewhere, starting with **Best Effort** pods, followed by **Burstable** pods. **Guaranteed** pods are never evicted. Pods are Guaranteed if the resource request is equal to the resource limit.
 
