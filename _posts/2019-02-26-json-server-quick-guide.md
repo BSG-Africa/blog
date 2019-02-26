@@ -9,6 +9,7 @@ On many an occasion, while working on a project, I have needed to be able to get
 
 Wouldn’t it be great to have my own Fake Back-end? Then I could set up everything as it should be and simply change to the correct the calls once they are made available…  Welcome to JSON SERVER
 
+<!--more-->
 
 #### JSON SERVER
 “A full fake REST API with zero coding in less than 30 seconds.  Created for front-end developers who need a quick back-end for prototyping and mocking.”
