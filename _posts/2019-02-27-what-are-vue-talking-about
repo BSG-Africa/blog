@@ -34,7 +34,7 @@ export default {
             ComponentTwo
         },
 
-// all data properties go to the reactivity system. when the values change, the view will “react”, updating to match the new values.
+// all data properties go to the reactivity system. when the values change, the view will “react”, updating to match the new values
         data: function() {
             return {
                 isLoading: false,
@@ -42,7 +42,7 @@ export default {
             };
         },
 
-// lifecycle hook, called after the instance has been mounted
+// lifecycle hook, called after the instance has been mounted, one of a few
         mounted: function() {
             this.isLoading = true;
             ItemService.getItems()
@@ -50,15 +50,16 @@ export default {
                 .then(() => (this.isLoading = false));
         },
 
-// logic, cached based on their dependencies
+// logic cached based on dependencies
         computed: {
             newItems: function() {}
        },
 
-// regular methods
+// regular methods not chached on dependancies
        methods: {
            standardMethod: function() {}
        }
 };
-
 ```
+
+To be continued...
